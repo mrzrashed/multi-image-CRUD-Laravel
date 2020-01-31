@@ -30,7 +30,6 @@ class MultipleUploadController extends Controller
 
         // Ridirect to all image page
         return redirect()->route('view');
-
     }
 
     function view()
@@ -38,7 +37,7 @@ class MultipleUploadController extends Controller
         $image = array();
         $data = Image::all('image');
         $image = array();
-        foreach ($data as $key=>$value) {
+        foreach ($data as $key => $value) {
             $image[$key] = $value->image;
         }
         return view('welcome', compact('image'));
